@@ -1,0 +1,156 @@
+section {
+  /* text-align: center; */
+  /* margin-top: 20px; */
+}
+
+.secondary-heading {
+  font-size: 17px;
+  font-weight: 400;
+  margin-top: 40px;
+  color: #597b82;
+  text-align: center;
+}
+
+.primary-heading {
+  font-size: 22px;
+  font-weight: 400;
+  margin-top: -7px;
+  color: #597b82;
+  text-align: center;
+}
+
+.img {
+  width: 120px;
+  margin-top: -10px;
+  margin: auto;
+}
+
+.paragraph {
+  max-width: 50%;
+  margin: 0 auto;
+  color: #597b82;
+  font-size: 15px;
+  margin-top: 17px;
+  text-align: center;
+}
+
+.images {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  margin: 10px auto;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.images .image-box {
+  height: 400px;
+  margin-top: 50px;
+  border-radius: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #aeaeae;
+  position: relative;
+}
+
+.images .image-box img {
+  /* width: 100%; */
+  height: 350px;
+  border-radius: 20px;
+  /* object-fit: contain; */
+  margin: auto;
+}
+
+.text-box {
+  clip-path: polygon(0 52%, 50% 41%, 100% 50%, 100% 100%, 0% 100%);
+  background-color: white;
+  width: 190px !important;
+  border: 1px solid #ccc;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 20px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  text-align: center;
+  right: 0;
+}
+
+.text-box div {
+  height: 100%;
+  margin-top: 50px;
+  transform: translateY(10px);
+}
+
+.iconBox {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+}
+
+.icon {
+  color: #5046c4 !important;
+  width: 100%;
+  height: 100%;
+}
+
+.text-box h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #5046c4;
+}
+
+.text-box p {
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 780px) {
+  .paragraph {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  .images {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .paragraph {
+    max-width: 90%;
+  }
+
+  .primary-heading {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .primary-heading {
+    font-size: 18px;
+  }
+  .secondary-heading {
+    font-size: 15px;
+  }
+  .paragraph {
+    font-size: 14px;
+  }
+}

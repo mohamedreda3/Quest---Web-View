@@ -1,0 +1,250 @@
+.banner2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* padding: 0px 30px; */
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  /* min-height: 80vh; */
+  /* padding-top: 30px; */
+  margin-bottom: 10px;
+  z-index: 2;
+  /* background-image: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114)); */
+}
+
+section.index-banner {
+  width: 100%;
+  /* padding-top: 130px; */
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* background-color: #fef0ef !important; */
+  padding-bottom: 80px;
+  height: 100vh;
+  /* background: url("https://res.cloudinary.com/duovxefh6/image/upload/v1709382064/image8_fc50r7.png"); */
+}
+
+/* 
+section.index-banner::after,
+section.index-banner::before {
+  content: "";
+  position: absolute;
+  background: url("https://res.cloudinary.com/duovxefh6/image/upload/v1707135653/dots-pattern-pink_egzrqx.svg")
+    no-repeat;
+  height: 250px;
+  width: 110px;
+} */
+
+section.index-banner::after {
+  top: 100%;
+  left: 0;
+}
+
+section.index-banner::after {
+  translate: 0 -100%;
+}
+
+section.index-banner::before {
+  top: 25%;
+  right: 0;
+}
+
+.banner2 h4 {
+  font-size: 50px;
+  margin-bottom: 30px;
+  animation-name: fadeInUp;
+  color: white;
+}
+
+.banner2 {
+  max-width: 100%;
+  /* margin: auto; */
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  position: relative;
+}
+
+.banner2 > * {
+  width: 50% !important;
+  height: 100%;
+}
+
+.banner2 h3 {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.banner2 .left p {
+  color: #ffffff;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.banner2 .right {
+  width: 50% !important;
+}
+
+.banner2 .left {
+  width: 50% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1234;
+}
+
+.banner2 .right img {
+  max-width: 100%;
+}
+
+.banner2 .actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.actions button {
+  border: none;
+  padding: 10px 20px;
+  /* width: 100px; */
+  border-radius: 4px;
+  text-transform: capitalize;
+  border: 3px solid transparent;
+  border-radius: 16px;
+  border-color: white;
+  transition: 0.3s all ease-in-out;
+}
+
+.actions button {
+  background-color: #6c69fa;
+  color: white;
+}
+
+/* .actions button {
+  color: white;
+  background-color: transparent;
+} */
+
+/* .actions button:nth-child(2) {
+  color: var(--main-color);
+  background-color: white;
+}
+
+.actions button:nth-child(2):hover {
+  background-color: transparent;
+  color: white;
+} */
+
+@media (max-width: 1200px) {
+  .banner2 h4 {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 992px) {
+  .banner2 .right {
+    width: 100%;
+    order: -1;
+    text-align: center;
+  }
+
+  .banner2 h4 {
+    font-size: 30px !important;
+  }
+
+  .banner2 .left {
+    width: 100%;
+    text-align: center;
+  }
+
+  .banner2 .actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+}
+
+.bannerOverLay {
+  position: absolute;
+  background: var(--main-color);
+  width: 62% !important;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+  z-index: 123;
+  clip-path: polygon(0% 0%, 83% 0, 93% 45%, 83% 98%, 0% 100%);
+  clip-path: polygon(0% 0%, 83% 0, 93% 45%, 79% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 83% 0, 93% 45%, 78% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 83% 0, 93% 45%, 82% 100%, 0% 100%);
+}
+
+.banner2 .right > div {
+  height: 100vh !important;
+}
+
+.banner2 .right img {
+  width: 100%;
+  height: 97%;
+  object-fit: cover;
+}
+
+.banner2 .left {
+  padding: 20px;
+}
+
+@media (max-width: 998px) {
+  .banner2 h3 img {
+    display: none;
+  }
+  /* .banner2 h3 {
+    color: #6c69fa;
+  } */
+  .banner2 {
+    flex-wrap: initial !important;
+    overflow: visible !important;
+    flex-direction: column !important;
+  }
+
+  section.index-banner {
+    min-height: 100vh !important;
+    height: auto !important;
+    background: var(--main-color);
+  }
+
+  .bannerOverLay {
+    display: none;
+  }
+
+  .banner2 h4 {
+    color: var(--main-color) !important;
+  }
+
+  /* .banner2 p {
+    color: #6c69fa !important;
+  } */
+
+  .banner2 .right,
+  .banner2 .left {
+    width: 100% !important;
+  }
+}
+
+.courses .swiper-wrapper {
+  padding: 20px;
+}
+
+.courses {
+  overflow: hidden;
+}
+
+.courses .swiper-slide {
+  max-width: 320px;
+}

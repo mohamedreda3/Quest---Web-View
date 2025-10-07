@@ -1,0 +1,33 @@
+.iconWithText {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.text {
+  text-align: start;
+  margin-left: 20px;
+}
+
+.leftBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 892px) {
+  .goalSection {
+    flex-direction: column !important;
+    padding: 20px;
+    align-items: center;
+  }
+  .goalSection > img {
+    width: 100% !important;
+  }
+  .goalSection .leftBox {
+    width: 100% !important;
+  }
+}
+
+.goalSection .columnDiv {
+  align-items: flex-start;
+}

@@ -1,0 +1,43 @@
+.rowDiv.goalSection.futureSection {
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--main-color);
+  color: white !important;
+}
+
+.swiper-wrapper,
+.swiper {
+  max-width: 100% !important;
+}
+
+.svgWithText {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.svgWithText svg {
+  color: #5046c4 !important;
+}
+
+.svgWithText:hover svg {
+  color: White !important;
+}
+
+ul.features {
+  display: flex;
+  width: min(600px, 100%);
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+ul.features li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: min(270px, 100%);
+}

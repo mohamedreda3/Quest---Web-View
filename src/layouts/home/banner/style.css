@@ -1,0 +1,19 @@
+.banner_home img {
+    width: 90% !important;
+    border-radius: 16px;
+    margin: auto;
+    height: 500px;
+}
+.banner_home .swiper-slide {
+    width: 100% !important;
+    border-radius: 16px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner_home{
+    margin: 30px auto;
+    border-radius: 16px;
+}

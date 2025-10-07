@@ -1,0 +1,214 @@
+/* helpcenter.css */
+
+/* Reset some default styles */
+.help_center_page,
+.help_center_page * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f5f5f5;
+  color: #555555;
+}
+
+/* Header Section */
+.help_center_header {
+  background: linear-gradient(to bottom, #6c69fa 0%, #5046c4 100%) !important;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.help_center_header h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.help_center_header p {
+  font-size: 1.1em;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Support Channels Section */
+.help_center_support {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.help_center_support h2 {
+  font-size: 2em !important;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.support_channels {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.support_card {
+  background-color: #fff;
+  width: 280px;
+  padding: 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #2c3e50;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.support_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.support_icon {
+  font-size: 2em;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.support_icon.facebook {
+  color: #3b5998;
+}
+
+.support_icon.whatsapp {
+  color: #25d366;
+}
+
+.support_icon.phone {
+  color: #5046c4;
+}
+
+.support_icon.telegram {
+  color: #0088cc;
+}
+
+.support_info h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.3em;
+  margin-bottom: 8px;
+}
+
+.support_info p {
+  font-size: 0.95em;
+  color: #fff !important;
+}
+
+.support_arrow {
+  position: absolute;
+  right: 15px;
+  font-size: 1em;
+  color: #7f8c8d;
+}
+
+/* Optional: Additional Resources Section */
+/*
+.help_center_resources {
+  padding: 40px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.help_center_resources h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2em;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+*/
+
+/* Footer Section */
+.help_center_footer {
+  background-color: #2c3e50;
+  color: #bdc3c7;
+  text-align: center;
+  padding: 20px;
+}
+
+.help_center_footer p {
+  font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .help_center_header {
+    padding: 40px 10px;
+  }
+
+  .help_center_header h1 {
+    font-size: 2em;
+  }
+
+  .help_center_header p {
+    font-size: 1em;
+  }
+
+  .support_channels {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .support_card {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .help_center_header {
+    padding: 30px 10px;
+  }
+
+  .help_center_header h1 {
+    font-size: 1.8em;
+  }
+
+  .help_center_header p {
+    font-size: 0.95em;
+  }
+
+  .support_card {
+    padding: 15px;
+  }
+
+  .support_icon {
+    font-size: 1.8em;
+    margin-right: 10px;
+  }
+
+  .support_info h3 {
+    font-size: 1.1em;
+  }
+
+  .support_info p {
+    font-size: 0.9em;
+  }
+
+  .support_arrow {
+    right: 10px;
+  }
+}
+
+/* Focus States for Accessibility */
+.support_card:focus,
+.support_card:hover {
+  outline: none;
+}
+
+.support_card:focus-visible {
+  outline: 2px solid #eb456a;
+  outline-offset: 4px;
+}

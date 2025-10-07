@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.main-page img {
+  margin: 0 auto;
+  object-fit: cover;
+}
+@media (max-width: 1140px) {
+  .main-page {
+    flex-direction: column;
+  }
+
+  .main-page img {
+    margin: 0 auto;
+    object-fit: cover;
+  }
+
+  .recommendation-page {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 950px) {
+  .recommendation-boxes {
+    gap: 12px;
+  }
+
+  .recommendation-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .recommendation-boxes div {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 910px) {
+  .recommendation-boxes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .about-page {
+    flex-direction: column;
+  }
+  .about-text {
+    max-width: 100% !important;
+  }
+
+  .learn-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .accordian-icons {
+    font-size: 12px;
+    gap: 4px;
+  }
+  .accordian-icons div {
+    width: 20px;
+    height: 20px;
+    margin: auto;
+  }
+  .accordian-icons svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 682px) {
+  .recommendation-boxes {
+    grid-template-columns: 1fr;
+  }
+
+  .recommendation-boxes img {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-text h2 {
+    font-size: 21px;
+  }
+
+  .about-text p {
+    font-size: 12px;
+  }
+
+  .main-page {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .learn-page {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-page {
+    padding: 32px 25px !important;
+  }
+
+  .module-page {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 546px) {
+  .about-box {
+    padding: 14px;
+  }
+
+  .about-icons {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 517px) {
+  .about-icons {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-icons {
+    flex-direction: column;
+  }
+  .about-box {
+    padding: 18px;
+  }
+
+  .home {
+    padding: 20px;
+  }
+
+  .learn-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .learn-grid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .main-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .module-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

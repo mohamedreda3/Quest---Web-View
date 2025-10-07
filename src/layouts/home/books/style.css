@@ -1,0 +1,104 @@
+.book {
+  display: flex;
+  width: 320px;
+  padding: 10px;
+  align-items: flex-start;
+  gap: 20px;
+  border-radius: 4px;
+  border: 1px solid rgba(9, 9, 55, 0.1);
+  background: #f4f4ff;
+}
+
+.bookDetailsMulti{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.gridDiv {
+  display: grid;
+  gap: 20px;
+  margin: 20px 0;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 4fr));
+}
+
+.infinite-scroll-component__outerdiv {
+  width: 90%;
+  margin: auto !important;
+}
+.book h3 {
+  color: #090937;
+  font-family: Manrope;
+  font-size: 14px !important;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.book p {
+  color: rgba(9, 9, 55, 0.6);
+  font-family: Manrope;
+  font-size: 14px !important;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.buyNow {
+  color: var(--main-color);
+  font-family: Manrope;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: auto !important;
+}
+
+.gridDiv {
+  display: grid;
+  gap: 20px;
+  margin: 20px 0;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 4fr));
+}
+
+.book img {
+  width: 120px;
+  height: 100%;
+  flex-shrink: 0;
+  border-radius: 4px;
+  /* box-shadow: 0px 4px 8px 0px rgba(98, 81, 221, 0.2); */
+  /* object-fit: cover; */
+  object-fit: contain;
+
+}
+
+
+.buyNow {
+    color: white;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background: var(--main-color);
+    margin-top: auto !important;
+    padding: 10px;
+    border-radius: 6px;
+    transition: .5s ease-in-out;
+    border: 1px solid transparent;
+    text-align: center;
+}
+
+.buyNow:hover{
+    border-color: var(--main-color) !important;
+    background-color: transparent;
+    color: var(--main-color);
+}

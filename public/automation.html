@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Excel File</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .upload-container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .upload-container h1 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    .upload-container input[type="file"] {
+      margin-bottom: 1rem;
+    }
+    .upload-container button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin: 0.5rem;
+    }
+    .upload-container button:hover {
+      background-color: #0056b3;
+    }
+    .loading {
+      display: none;
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      color: #007bff;
+    }
+    .spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #007bff;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <div class="upload-container">
+    <h1>Upload Excel File</h1>
+    <form id="uploadForm">
+      <input type="file" id="xlsxFile" name="xlsxFile" accept=".xlsx" required>
+      <button type="submit">Upload</button>
+    </form>
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Processing...</p>
+    </div>
+    <button id="stopButton" style="display: none;">Stop</button>
+  </div>
+
+  <div id="responseTable" style="display: none;">
+    <h2>Uploaded Data</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Status</th>
+          <th>Site</th>
+          <th>Keywords</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <script>
+    let intervalId;
+
+    document.getElementById('uploadForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Show loading indicator
+      const loading = document.getElementById('loading');
+      loading.style.display = 'block';
+
+      const fileInput = document.getElementById('xlsxFile');
+      const file = fileInput.files[0];
+      const formData = new FormData();
+      formData.append('xlsxFile', file);
+
+      // Start polling the status endpoint immediately
+      intervalId = setInterval(fetchStatus, 2000);
+      // Show the Stop button
+      document.getElementById('stopButton').style.display = 'block';
+
+      // Send the upload request
+      fetch('http://camp-coding.tech/wp-posts-uploader/upload', {
+        method: 'POST',
+        body: formData,
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Upload failed');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          loading.style.display = 'none';
+          alert('An error occurred while uploading the file.');
+        });
+    });
+
+    // Function to fetch status
+    function fetchStatus() {
+      fetch('http://camp-coding.tech/wp-posts-uploader/status')
+        .then(response => response.json())
+        .then(data => {
+          const tableBody = document.getElementById('tableBody');
+          tableBody.innerHTML = ''; // Clear previous data
+
+          data.forEach(item => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${item.id}</td>
+              <td>${item.title}</td>
+              <td>${item.status}</td>
+              <td>${item.details.Site}</td>
+              <td>${item.details.Keywords}</td>
+              <td>${item.details.Category}</td>
+            `;
+            tableBody.appendChild(row);
+          });
+
+          // Show the response table
+          document.getElementById('responseTable').style.display = 'block';
+        })
+        .catch(error => {
+          console.error('Error fetching status:', error);
+        });
+    }
+
+    // Stop button functionality
+    document.getElementById('stopButton').addEventListener('click', function () {
+      clearInterval(intervalId); // Stop the interval
+      this.style.display = 'none'; // Hide the Stop button
+      document.getElementById('loading').style.display = 'none'; // Hide loading indicator
+
+      // Send a request to the stop endpoint
+      fetch('http://camp-coding.tech/wp-posts-uploader/stop', {
+        method: 'GET',
+      })
+        .then(response => {
+          if (response.ok) {
+            alert('Status polling stopped.');
+          } else {
+            throw new Error('Failed to stop polling');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('An error occurred while stopping the polling.');
+        });
+    });
+  </script>
+</body>
+</html>

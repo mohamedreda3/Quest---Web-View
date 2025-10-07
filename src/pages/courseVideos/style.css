@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+.nav {
+  background: linear-gradient(to right, #6c69fa, #5046c4) !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+}
+
+.progress-container p {
+  color: white;
+  margin: 0;
+  width: 210px !important;
+}
+
+.progress-container div {
+  background-color: #bb535b;
+  width: 200px;
+  height: 3px;
+  border-radius: 10px;
+  margin: 8px 0;
+  position: relative;
+}
+
+.progress-container div::after {
+  /* content: ''; */
+  /* position: absolute; */
+  /* background-color: white; */
+  /* width: 70px; */
+  /* height: 3px; */
+  /* border-radius: 10px; */
+}
+
+.progress span {
+  height: 3px;
+  background: white;
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.progress-container p:last-child {
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btns-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.btns-container button {
+  padding: 10px 30px;
+  border-radius: 10px;
+}
+
+.btns-container button:first-child {
+  color: white;
+  border: 1px solid white;
+  background-color: transparent;
+}
+
+.btns-container button:last-child {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  color: #5046c4;
+  border: 1px solid white;
+  gap: 20px;
+}
+
+.btns-container button:last-child span {
+  margin: auto 0;
+}
+
+.btns-container svg {
+  width: 15px;
+  height: 15px;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.menu-container div {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  gap: 10px;
+}
+
+.menu-container div span {
+  margin: auto 0;
+}
+
+.menu-container div svg {
+  width: 20px;
+  height: 20px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-text-box {
+  display: flex;
+  margin-top: 30px;
+  gap: 5px;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 900;
+  align-items: center;
+}
+
+.home-text-box p:first-child {
+  text-decoration: underline;
+  color: #5046c4;
+}
+
+.home-text-box p:last-child {
+  text-decoration: underline;
+  color: #597b82;
+}
+
+.videos {
+}
+
+/* button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+} */
+
+.nav {
+  padding: 20px;
+}
+
+.btns-container-next svg,
+.accordion svg {
+  color: #d23b5e !important;
+}
+
+.videos {
+  width: 100%;
+  /* padding: 20px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.showVideo,
+.showVideo iframe {
+  width: 100% !important;
+  border-radius: 16px !important;
+}
+
+.showVideo {
+  width: 80% !important;
+  border-radius: 16px !important;
+}
+
+.showVideo + div {
+  width: min(400px, 100%) !important;
+  max-height: 540px;
+  overflow-y: scroll;
+}
+
+.videoscolumnDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.videoContentTwo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ebebeb;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #6d6d6d;
+}
+
+.home-text-box p {
+  margin: 0 !important;
+}

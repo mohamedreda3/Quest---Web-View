@@ -1,0 +1,137 @@
+.homeRow {
+  height: 190px;
+  background-image: linear-gradient(to right, #6c69fa, #5046c4);
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* overflow: hidden; */
+  margin: 90px 0;
+  position: relative;
+  /* transform: translateX(80px); */
+}
+
+.homeRow h4 {
+  max-width: 43%;
+  font-size: 20px;
+  color: white;
+  line-height: 1.6;
+  margin: 0 auto;
+  width: fit-content;
+  margin-top: 30px;
+  font-weight: 400;
+}
+
+.homeRow button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background-color: white;
+  color: #5046c4;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid #5046c4;
+}
+
+.homeRow button span:last-child {
+  width: 20px;
+  font-weight: bold;
+  height: fit-content;
+  margin: auto;
+}
+
+.homeRow button svg {
+  width: 25px;
+  font-weight: bold;
+  color: #5046c4 !important;
+}
+
+.homeRow .img {
+  clip-path: ellipse(44% 69% at 51% 98%);
+  /* background-color: #eecedb; */
+  width: 250px;
+  height: 300px;
+  /* position: absolute;
+   */
+  top: -10px;
+  left: 20px;
+}
+
+.homeRow img {
+  position: absolute;
+  top: -5px;
+  width: 200px;
+  object-fit: contain;
+  height: 250px;
+
+  left: 50px;
+  /* bottom: 50px; */
+  z-index: 999;
+}
+
+.triangle1 {
+  clip-path: polygon(36% 35%, 50% 60%, 69% 45%);
+  background-color: #eecedb;
+  width: 180px;
+  height: 200px;
+  position: absolute;
+
+  left: 800px;
+  top: 40px;
+}
+
+.triangle2 {
+  clip-path: polygon(37% 34%, 43% 65%, 74% 45%);
+  background-color: #eecedb;
+  width: 90px;
+  height: 100px;
+  position: absolute;
+  left: 500px;
+  top: 0px;
+  z-index: 1000;
+}
+
+/* .imgBox {
+  background-color: bisque;
+  width: fit-content;
+  position: relative;
+} */
+
+.instrButton {
+  background-color: var(--main-color) !important;
+  color: white !important;
+}
+.instrButton svg {
+  color: white !important;
+}
+.instrButton:hover {
+  background-color: transparent !important;
+  color: var(--main-color) !important;
+  border-color: var(--main-color);
+}
+
+.instrButton:hover svg {
+  color: var(--main-color) !important;
+}
+
+.spacebetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.iconWithText svg {
+  overflow: hidden;
+  font-size: 30px;
+  color: black !important;
+  margin-right: 6px;
+  margin-left: auto;
+}
+.bannerFont {
+  display: flex;
+  align-items: center !important;
+}
+.bannerFont img {
+  min-width: 180px !important;
+}

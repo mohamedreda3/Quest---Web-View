@@ -1,0 +1,164 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.Toastify {
+  z-index: 123123432 !important;
+}
+
+* {
+  position: relative;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+div#root {
+  background: #f5f4f4;
+}
+
+div#root {
+  background: #f5f4f4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 592px) {
+  .profile_page {
+    flex-direction: column !important;
+  }
+
+  .profileStyle {
+    padding: 0 !important;
+  }
+  .profile .profile_page .profile_content {
+    padding: 20px !important;
+  }
+  .profileStyle form .inputField {
+    max-width: 100% !important;
+    display: flex;
+    flex-direction: column;
+  }
+  .profileStyle .form {
+    margin: 20px 0;
+    padding: 20px;
+    display: flex;
+    flex: 1 1;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+  }
+  .header .right .logo img {
+    width: 130px !important;
+  }
+
+  .videoContentTwo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column !important;
+    padding: 6px !important;
+  }
+
+  .btns-container button {
+    padding: 10px 10px !important;
+    border-radius: 10px;
+  }
+
+  .sign {
+    font-size: 10px !important;
+    padding: 6px !important;
+  }
+  .actions button {
+    font-size: 13px !important;
+  }
+
+  .rounded-3xl.shadow-2xl.flex.flex-col.p-5.about-box {
+    padding: 1rem !important;
+  }
+
+  .px-10 {
+    padding: 5px !important;
+  }
+
+  .banner2 h3 {
+    font-size: 20px !important;
+  }
+  .banner2 h4 {
+    font-size: 17px !important;
+  }
+  .banner2 p {
+    font-size: 13px !important;
+  }
+
+  .story-container > img {
+    display: none !important;
+  }
+
+  .stories_container .swiper .swiper-slide,
+  .stories_container .swiper .swiper-wrapper {
+    max-height: 100vh !important;
+  }
+
+  .story-container {
+    height: auto !important;
+    max-height: 100vh !important;
+  }
+
+  .homeRow {
+    height: auto !important;
+    padding: 20px !important;
+
+    flex-wrap: wrap;
+  }
+
+  .homeRow h4 {
+    max-width: 100% !important;
+  }
+
+  .px-20 {
+    padding: 0 !important;
+  }
+
+  section.about-page.mx-4.bg-white.rounded-3xl.py-8.px-10.flex.justify-between.align-middle.gap-10 {
+    margin: 0 !important;
+  }
+}
+
+span.ml-4 svg {
+  color: black !important;
+}
+
+section.homeRow {
+  margin-bottom: 0 !important;
+}

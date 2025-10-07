@@ -1,0 +1,272 @@
+.profile_page .profile_content {
+  /* max-width: 100%; */
+  margin: auto;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.074) 0px 1px 4px;
+  padding: 40px !important;
+  border-radius: 50px;
+  /* min-height: 100vh; */
+}
+.profile_info .profile_img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: relative;
+  margin: 10px auto;
+  border: 1px solid var(--main-color);
+  /* padding: 10px; */
+}
+
+.profile_info h6 {
+  font-size: 20px;
+  height: fit-content !important;
+}
+
+.profile_info h4 {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--main-color);
+}
+
+.profile_info p {
+  font-size: 20;
+  color: #587a86;
+  font-weight: 400;
+  text-align: start;
+}
+
+.profile_info h5 {
+  color: #222;
+}
+
+.profile_img img {
+  max-width: 100%;
+}
+
+.profile_info .pages {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px 0px 10px;
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+
+.profile_info .pages > div {
+  padding: 10px;
+  width: 200px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.2s all ease-in-out;
+}
+
+.profile_info .pages > div:first-of-type {
+  background-color: #218838;
+}
+
+.profile_info .pages > div:first-of-type:hover {
+  border-color: #218838;
+  color: #218838;
+  background-color: transparent;
+}
+
+.profile_info .pages > div:nth-of-type(2) {
+  background-color: #0069d9;
+}
+
+.profile_info .pages > div:nth-of-type(2):hover {
+  color: #0069d9;
+  background-color: transparent;
+  border-color: #0069d9;
+}
+
+.profile_info .pages > div:nth-of-type(3) {
+  background-color: #e0a800;
+}
+
+.profile_info .pages > div:nth-of-type(3):hover {
+  color: #e0a800;
+  background-color: transparent;
+  border-color: #e0a800;
+}
+
+.profile_info .pages > div:last-of-type {
+  background-color: #c82333;
+}
+
+.profile_info .pages > div:last-of-type:hover {
+  color: #c82333;
+  background-color: transparent;
+  border-color: #c82333;
+}
+
+.profile_page .profile_content {
+  /* max-width: 100%; */
+  margin: auto;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.074) 0px 1px 4px;
+  padding: 10px;
+  border-radius: 50px;
+  /* min-height: 100vh; */
+}
+
+.profile {
+  width: min(1000px, 100%) !important;
+}
+.profile_content .courses_types {
+  display: flex;
+  align-items: center;
+  width: 500px;
+  max-width: 100%;
+  margin: auto;
+  justify-content: space-around;
+  background-color: #dedefe;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.courses_types .course_type {
+  cursor: pointer;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+.courses_types .course_type.active {
+  color: var(--main-color);
+  border-bottom: 2px solid var(--main-color);
+}
+
+@media (max-width: 767px) {
+  .profile_page {
+    margin-bottom: 50px !important;
+  }
+}
+
+@media (max-width: 565px) {
+  .profile_info .pages > div {
+    width: 48%;
+  }
+}
+
+/* @media (max-width:2) {
+
+} */
+
+.profile_page {
+  /* margin-top: 70px; */
+  /* padding: 20px; */
+  padding-top: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin: 10px;
+  justify-content: space-around;
+}
+
+.profile_page > * {
+  margin: 0 !important;
+}
+
+.profileStyle form .inputField input,
+.profileStyle form .inputField select {
+  padding: 6px 20px;
+  outline: none;
+  border: 0.1px solid;
+  margin-top: 10px;
+  width: min(300px, 100%);
+}
+
+.profileStyle form .inputField {
+  width: 290px;
+  display: flex;
+  flex-direction: column;
+}
+.profileStyle .form {
+  margin: 20px 0;
+  padding: 20px;
+  display: flex;
+  flex: 1 1;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.profileStyle form {
+  margin: 20px 0;
+  padding: 20px;
+  display: flex;
+  flex: 1 1;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 30px;
+}
+
+button.defultButtonStyle {
+  border: none;
+  padding: 10px 40px;
+  width: 240px;
+  border-radius: 16px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: auto;
+  color: white;
+  outline: none;
+  background: linear-gradient(to right, #6c69fa, #5046c4);
+}
+button.saveStyle {
+  border: none;
+  padding: 10px 40px;
+  width: 240px;
+  border-radius: 16px;
+  font-size: 20px;
+  cursor: pointer;
+  margin: auto;
+  color: white;
+  outline: none;
+  border: 0.2px solid #587a86;
+  color: var(--main-color);
+  background-color: transparent;
+}
+.profileStyle {
+  padding: 0 40px;
+}
+
+form.payment .form {
+  /* flex-direction: column; */
+}
+
+form.payment .form .inputField {
+  flex-direction: row;
+  width: min(400px, 100%);
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+form.payment .form .inputField {
+  flex-direction: row;
+  width: min(500px, 100%);
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.objectsComm {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.calender {
+  flex-direction: row;
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

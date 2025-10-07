@@ -1,0 +1,147 @@
+/* 1) Import Lato from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+/* 2) Reset & base styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* Apply your main font by default */
+  font-family: var(--main-font) !important;
+}
+
+/* (Optional) Code elements often use monospace */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* 3) Local @font-face rules */
+@font-face {
+  font-family: "Madelyn";
+  src: 
+    url("/src/assets/assets/fonts/MadelynFill-Regular.ttf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "AmpleDisplay";
+  src: url("/src/assets/assets/fonts/tt-masters-demo.mastersdemoblack.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Waterlily";
+  src: url("/src/assets/assets/fonts/Waterlily\ Script.ttf") format("truetype");
+}
+
+/* 4) Define your custom properties (variables) */
+:root {
+  --main-color: #5046c4;
+  ---second-color: #6c69fa; /* Fixed from --- to -- */
+   ---third-color: #fede5a; /* Fixed from --- to -- */
+   ---fourth-color: #f5f4f4; /* Fixed from --- to -- */
+
+  --third-font: "Lato", sans-serif;
+  --first-font: "AmpleDisplay", sans-serif;
+  /* --first-font: "AmpleDisplay", sans-serif; */
+   --second-font: "Madelyn", cursive;
+}
+.secondColor {
+  color: var(---second-color) !important;
+}
+
+.thirdColor {
+   color: var(---third-color) !important;
+}
+.firstColor {
+  color: var(--main-color) !important;
+}
+
+/* 5) Body-level defaults */
+body {
+  margin: 0;
+  font-family: var(--main-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* 6) Hide Webpack Dev Server overlay iframe (if relevant in dev mode) */
+iframe#webpack-dev-server-client-overlay {
+  display: none !important;
+}
+
+/* 7) Your custom component/classes styles */
+.support_card,
+.about__offer-card {
+  background: var(--third-color) !important; /* #ffde59 */
+}
+
+.btn-primary {
+  background: var(--main-color) !important; /* #5046c4 */
+  border: none !important;
+}
+
+.thirdFont {
+  font-family: var(--third-font) !important;
+}
+
+.firstFont {
+  font-family: var(--first-font) !important;
+}
+
+.firstFontEffect {
+  color: #fff6d5 !important;
+  font-weight: bold;
+  text-shadow: 3px 0px 0px rgba(254, 222, 90, 1);
+}
+
+.secondFontEffect {
+  color: #fede5a !important;
+  font-weight: bold;
+  text-shadow: 3px 0px 0px var(---second-color);
+}
+
+.secondFont {
+  font-family: var(--second-font) !important;
+  font-size: 37px !important;
+}
+
+.mainColor {
+  color: var(--main-color) !important;
+  font-weight: bold !important;
+}
+
+.bgMainColor {
+  background-color: var(--main-color) !important;
+}
+
+.seconderyColor {
+  color: var(---second-color) !important;
+}
+.bgSecondaryColor {
+  background-color: var(---second-color) !important;
+}
+
+.thirdColor {
+  color: var(---third-color) !important;
+}
+
+.thirdBgColor {
+  background-color: var(---third-color) !important;
+}
+.fourhColor {
+  color: var(---fourth-color) !important;
+}
+
+.fourhBgColor {
+  background-color: var(---fourth-color) !important;
+}
+
+
+input, input::placeholder{
+  font-family: var(--first-font) !important;
+  color: var(--main-color) !important;
+}
