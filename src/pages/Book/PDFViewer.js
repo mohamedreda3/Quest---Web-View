@@ -51,73 +51,7 @@ function PDFViewer(props) {
     }
   };
   const [scrollInterval, setScrollInterval] = useState(null);
-function setupPalmRejection(targetEl) {
-  if (!targetEl) return () => {};
 
-  let penActive = false;
-
-  const prevTouchAction = targetEl.style.touchAction;
-  const prevOverscroll = targetEl.style.overscrollBehavior;
-
-  // مهم عشان المتصفح ما يعملش سكرول/زووم أثناء الكتابة
-  targetEl.style.touchAction = 'none';
-  targetEl.style.overscrollBehavior = 'contain';
-
-  const onPointerDown = (e) => {
-    if (e.pointerType === 'pen' && e.isPrimary) {
-      penActive = true;
-      try { targetEl.setPointerCapture?.(e.pointerId); } catch {}
-    }
-  };
-
-  const onPointerUpOrCancel = (e) => {
-    if (e.pointerType === 'pen') {
-      penActive = false;
-    }
-  };
-
-  const cancelTouchWhenPen = (e) => {
-    if (penActive) {
-      e.preventDefault();
-      e.stopPropagation();
-      e.stopImmediatePropagation?.();
-    }
-  };
-
-  const cancelPointerTouchWhenPen = (e) => {
-    if (penActive && e.pointerType === 'touch') {
-      e.preventDefault();
-      e.stopPropagation();
-      e.stopImmediatePropagation?.();
-    }
-  };
-
-  targetEl.addEventListener('pointerdown', onPointerDown, { capture: true, passive: false });
-  targetEl.addEventListener('pointerup', onPointerUpOrCancel, { capture: true });
-  targetEl.addEventListener('pointercancel', onPointerUpOrCancel, { capture: true });
-
-  // لازم passive:false عشان preventDefault تشتغل
-  targetEl.addEventListener('touchstart', cancelTouchWhenPen, { capture: true, passive: false });
-  targetEl.addEventListener('touchmove',  cancelTouchWhenPen, { capture: true, passive: false });
-
-  // بعض المتصفحات تبعت PointerEvents للّمس برضه
-  targetEl.addEventListener('pointermove', cancelPointerTouchWhenPen, { capture: true, passive: false });
-
-  // دالة تنظيف
-  return () => {
-    targetEl.style.touchAction = prevTouchAction;
-    targetEl.style.overscrollBehavior = prevOverscroll;
-
-    targetEl.removeEventListener('pointerdown', onPointerDown, { capture: true, passive: false });
-    targetEl.removeEventListener('pointerup', onPointerUpOrCancel, { capture: true });
-    targetEl.removeEventListener('pointercancel', onPointerUpOrCancel, { capture: true });
-
-    targetEl.removeEventListener('touchstart', cancelTouchWhenPen, { capture: true, passive: false });
-    targetEl.removeEventListener('touchmove',  cancelTouchWhenPen, { capture: true, passive: false });
-
-    targetEl.removeEventListener('pointermove', cancelPointerTouchWhenPen, { capture: true, passive: false });
-  };
-}
 
   const startScrolling = (direction) => {
     stopScrolling();
@@ -170,16 +104,8 @@ function setupPalmRejection(targetEl) {
   const docContainer = webcomp?.shadowRoot?.querySelector('.DocumentContainer');
 
   // فعّل العزل طول ما القلم على الشاشة
-  let teardownPalmRejection = null;
-  if (docContainer) {
-    teardownPalmRejection = setupPalmRejection(docContainer);
-  }
+ 
 
-  // لو الوثيقة اتقفلت/اتبدلت نظّف الليستينرز
-  documentViewer.addEventListener('documentUnloaded', () => {
-    teardownPalmRejection?.();
-    teardownPalmRejection = null;
-  });
           // Load XFDF annotations if they exist
           if (props?.ann) {
             // console.log("props?.ann", props?.ann);
